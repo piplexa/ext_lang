@@ -1,0 +1,18 @@
+# Build artifacts
+*.o
+*.so
+*.a
+*.bc
+*.out
+
+# PGXS / extension build leftovers
+ext_lang/*.o
+ext_lang/*.so
+ext_lang/*.bc
+
+# Editor / OS
+.DS_Store
+.vscode/
+
+# Local env
+.env

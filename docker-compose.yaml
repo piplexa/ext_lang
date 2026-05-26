@@ -1,0 +1,20 @@
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: docker/postgres-ext/Dockerfile
+    image: postgres-ext-lang:16
+    container_name: postgres-hstore
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./initdb_ext_lang:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  pg_data:

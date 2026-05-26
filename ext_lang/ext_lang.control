@@ -1,0 +1,5 @@
+comment = 'Transparent multilingual type with prioritized SELECT performance'
+default_version = '1.0'
+relocatable = true
+requires = 'hstore'
+module_pathname = '$libdir/ext_lang'
