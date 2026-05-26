@@ -20,6 +20,16 @@
 
 - Docker + Docker Compose
 
+Все варианты установки (Docker и локальная установка без Docker) описаны в [INSTALL.ru.md](INSTALL.ru.md).
+
+## TL;DR Локальная установка (без Docker)
+
+```bash
+sudo apt update && sudo apt install -y build-essential postgresql-server-dev-16
+cd ext_lang && make && sudo make install
+psql -d <db_name> -c "CREATE EXTENSION IF NOT EXISTS hstore; CREATE EXTENSION IF NOT EXISTS ext_lang;"
+```
+
 ## Быстрый старт
 
 1. Сборка и запуск БД с чистого состояния:

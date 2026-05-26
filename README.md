@@ -22,6 +22,16 @@ PostgreSQL extension for localized text storage with:
 
 - Docker + Docker Compose
 
+For all installation options (Docker and local without Docker), see [INSTALL.md](INSTALL.md).
+
+## TL;DR Local Install (No Docker)
+
+```bash
+sudo apt update && sudo apt install -y build-essential postgresql-server-dev-16
+cd ext_lang && make && sudo make install
+psql -d <db_name> -c "CREATE EXTENSION IF NOT EXISTS hstore; CREATE EXTENSION IF NOT EXISTS ext_lang;"
+```
+
 ## Quick Start
 
 1. Build and start database from clean state:
